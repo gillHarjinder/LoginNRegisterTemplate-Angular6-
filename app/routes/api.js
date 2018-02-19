@@ -1,9 +1,8 @@
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var sh = require('shorthash');
-var path = require('../models/user');
-var User = require('../models/area');
-var Area = require('../models/area');
+var path = require('path');
+var User = require('../models/user');
 var config = require('../../config');
 var secret = config.secret;
 
