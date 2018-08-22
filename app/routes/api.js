@@ -14,7 +14,7 @@ module.exports = function(app, express){
 		apiRouter.sendResponse(res, true, 'This is API root!');
 	});
 
-	// send data to server to get register
+	// send data to server to register
 	apiRouter.post('/registerUser', function(req, res){
 		if(req.body.username && req.body.password){
 			var user = new User();
@@ -30,7 +30,7 @@ module.exports = function(app, express){
 						apiRouter.sendResponse(res, false, err);
 					}
 				}else{
-					apiRouter.sendResponse(res, false, 'Please include a username and password');
+					apiRouter.sendResponse(res, true, 'User Created');
 				}
 			});
 		} else {
@@ -125,5 +125,12 @@ module.exports = function(app, express){
 		});
 	});
 
+
+	apiRouter.sendResponse = function(res, success, message) {
+		return res.json({
+			success: success,
+			message: message
+		});
+	};
 	
 };
