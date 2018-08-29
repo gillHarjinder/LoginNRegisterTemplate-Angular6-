@@ -1,17 +1,13 @@
-<div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
-  </div>
-</div>
+<!-- multistep form -->
+<form id="msform">
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Login</h2>
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="pass" placeholder="Password" />
+    <a routerLink ="/register">
+      <h5 class="fs-subtitle">Need to Register?</h5>
+    </a>
+    <input type="submit" name="submit" class="submit action-button" value="Login" />
+  </fieldset>
+</form>
