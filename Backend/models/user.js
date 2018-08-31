@@ -55,3 +55,16 @@ module.exports.addUser = function(newUser, callback){
 	});
 }
 
+
+
+// code inside gets from:
+//		https://www.npmjs.com/package/bcryptjs 
+//		[Tp check a password] section
+// 	This function campare the password from DB
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+    	if(err) throw err;
+    	callback(null, isMatch);
+});
+}
+

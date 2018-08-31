@@ -55,6 +55,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 
+// passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// including the jwt tokken file
+require('./config/passport')(passport);
+
+
 
 // anything after ...3333/users/x goes here
 app.use('/users', users);
