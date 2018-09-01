@@ -10,13 +10,19 @@ import { LoginComponent } from './login/login.component';
 // this import is for http client
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    DashboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
