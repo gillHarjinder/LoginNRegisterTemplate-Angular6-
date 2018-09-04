@@ -10,14 +10,15 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 // this import is for http client
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './/app-routing.module';
+import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 // import service
-import { ValidateService } from './services/validate.service'
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -33,11 +34,11 @@ import { ValidateService } from './services/validate.service'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
+    HttpModule,
     AppRoutingModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
