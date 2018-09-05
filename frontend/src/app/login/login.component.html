@@ -1,10 +1,14 @@
 <!-- multistep form -->
-<form id="msform">
+<form id="msform" (submit)="onLoginSubmit()">
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Login</h2>
-    <input type="text" name="username" placeholder="Username" />
-    <input type="password" name="pass" placeholder="Password" />
+    <div class="form-group">
+      <input type="text" [(ngModel)]="username" name="username" placeholder="Username" />
+    </div>
+    <div class="form-group">
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" />
+    </div>
     <a routerLink ="/register">
       <h5 class="fs-subtitle">Need to Register?</h5>
     </a>
