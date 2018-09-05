@@ -9,10 +9,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
+//auth gaurd to protect routes
+import { AuthGuard } from './guards/auth.guard';
+
+
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: LoginComponent
   },
   {
     path: 'register',
@@ -23,16 +27,18 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'dashbar',
-    component: DashboardComponent
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
-    component: HomeComponent
+    redirectTo: ''
   }
 ];
 
