@@ -11,7 +11,7 @@ var config = require('./config/database')
 
 
 // this is connecting to the mongo data base
-mongoose.connect(config.database);
+mongoose.connect(config.database, { useNewUrlParser: true });
 
 // varify weather it connected 
 mongoose.connection.on('connected', () => {

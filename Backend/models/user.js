@@ -46,12 +46,19 @@ module.exports.getUserById = function(id, callback){
  *  https://www.npmjs.com/package/bcryptjs
  */
 module.exports.addUser = function(newUser, callback){
-	bcrypt.genSalt(10, function(err, salt) {
-	    bcrypt.hash(newUser.password, salt, function(err, hash) {
-            if(err) throw err;
-            newUser.password = hash;
-	        newUser.save(callback);
-	    });
+	bcrypt.genSalt(10, (err, salt) => {
+		if(err){
+			throw err;
+		}else{
+			bcrypt.hash(newUser.password, salt, (err, hash) => {
+				if (err) {
+					throw err;
+				} else {
+					newUser.password = hash;
+					newUser.save(callback);
+				}
+			});
+		}
 	});
 }
 
@@ -62,7 +69,7 @@ module.exports.addUser = function(newUser, callback){
 //		[Tp check a password] section
 // 	This function campare the password from DB
 module.exports.comparePassword = function(candidatePassword, hash, callback){
-	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+	bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
     	if(err) throw err;
     	callback(null, isMatch);
 });

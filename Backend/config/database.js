@@ -1,4 +1,4 @@
 module.exports = {
-    database: "mongodb://localhost/chatroom",
-    secret: "EEDFSHYDTAVNDLVXFSTDYHRGPPSAUYDVG*&^%WGGST%"
-}
+  database: 'mongodb://localhost/chatroom',
+  secret: 'EEDFSHYDTAVNDLVXFSTDYHRGPPSAUYDVG*&^%WGGST%'
+};

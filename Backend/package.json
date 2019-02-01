@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/gillHarjinder/ChatRoom#readme",
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
-    "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
+    "bcryptjs": "^2.4.3",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*"
   },
