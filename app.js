@@ -5,7 +5,9 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var passport = require('passport');
 var mongoose = require('mongoose');
-var config = require('./config/database')
+var config = require('./config/database');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 
 
@@ -75,6 +77,13 @@ app.get('/', (req, res) => {
   res.send('Invalid endpoit');
 })
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+})
+
+io.on('connection', function(socket){
+  console.log(' a user connection');
+});
 // Set Port
 var port = 3333;
 

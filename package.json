@@ -25,7 +25,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
